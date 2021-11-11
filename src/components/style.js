@@ -1,63 +1,60 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 50px;
   width: fit-content;
-  height: fit-content;
-`;
-export const Title = styled.div`
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 50px;
-  color: #fdbb2d;
-  font-family: "Mochiy Pop One", sans-serif;
-`;
-export const List = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 700px;
-  min-height: 700px;
-  max-height: fit-content;
-  color: black;
-  background: #e7e6e6;
-`;
-export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15px;
-  height: 50px;
+  flex-direction: column;
+  height: fit-content;
+  /* background: #fff; */
+`;
+export const TopSection = styled.div`
+  display: flex;
+  align-items: center;
 `;
 export const Input = styled.input`
-  width: 60%;
-  background: transparent;
-  font-size: 22px;
-  height: 100%;
+  width: 600px;
+  height: 35px;
   padding: 10px;
-  border: none;
+  font-size: 18px;
   outline: none;
-  border-bottom: 2px solid #fdbb2d;
+  border-radius: 6px;
+  border: 1px solid #d1d1cd;
 `;
 export const Button = styled.div`
-  color: #fdbb2d;
-  border: 2px solid #fdbb2d;
-  background: #e7e6e6;
-  font-family: "Mochiy Pop One", sans-serif;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 18px;
-  width: 130px;
-  height: 100%;
+  width: 250px;
+  height: 35px;
   display: flex;
+  font-family: "Courier New", Courier, monospace;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
-  transition: all 0.3s ease-in-out;
-  :hover {
-    background-color: #fdbb2d;
-    color: #e7e6e6;
-  }
+  background: #174aff;
+  color: white;
+  font-size: 19px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  margin-left: 15px;
+  cursor: pointer;
+`;
+
+export const Body = styled.div`
+  font-family: "Courier New", Courier,  bold;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 865px;
+  min-width: 865px;
+  margin-top: 50px;
+  border-radius: 3px;
+  min-height: fit-content;
+  background: #fff;
+  border: 1px solid #d1d1cd;
+`;
+
+export const Title = styled.div`
+  font-size: 25px;
+  border-bottom: 1px solid #d1d1cd;
+  padding: 15px;
 `;

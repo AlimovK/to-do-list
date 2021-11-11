@@ -1,16 +1,24 @@
 import React from "react";
-import { Button, Container, Input, List, Title, Wrapper } from "./style";
+import {
+  Button,
+  Container,
+  Input,
+  TopSection,
+  Title,
+  Wrapper,
+  Body,
+} from "./style";
 
 export const Todo = () => {
   return (
     <Container>
-      <Title>To do List</Title>
-      <List>
-        <Wrapper>
-          <Input />
-          <Button>Add</Button>
-        </Wrapper>
-      </List>
+      <TopSection>
+        <Input placeholder="What needs to be done" />
+        <Button>Add</Button>
+      </TopSection>
+      <Body>
+        <Title>Todo List</Title>
+      </Body>
     </Container>
   );
 };
