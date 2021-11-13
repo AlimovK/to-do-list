@@ -33,7 +33,7 @@ export const Todo = () => {
     <Container>
       <TopSection>
         <Input
-          value={name}
+          // value={name}
           placeholder="What needs to be done"
           onChange={(e) => setName(e.target.value)}
         />
@@ -46,10 +46,9 @@ export const Todo = () => {
             <Title.Value key={value.id}>
               {value.name}
               <Right>
-                <IconWrapper>
+                {/* <IconWrapper>
                   <Done />
-                </IconWrapper>
-
+                </IconWrapper> */}
                 <IconWrapper onClick={() => onDelete(value)}>
                   <Trash />
                 </IconWrapper>
