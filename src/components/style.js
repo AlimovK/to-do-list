@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { ReactComponent as trash } from "../assets/icon/trash2.svg";
-import { ReactComponent as done } from "../assets/icon/done.svg";
 
 export const Container = styled.div`
   margin-top: 50px;
@@ -9,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   height: fit-content;
-  /* background: #fff; */
 `;
 export const TopSection = styled.div`
   display: flex;
@@ -54,7 +52,6 @@ export const Body = styled.div`
   max-height: fit-content;
   background: #fff;
   padding: 25px;
-  /* padding: ${({ padding }) => padding && `15px`}; */
   border: 1px solid #d1d1cd;
 `;
 
@@ -78,13 +75,14 @@ Title.Value = styled.div`
   margin-bottom: 10px;
   opacity: 0.6;
 `;
-export const Right = styled.div`
-  width: 110px;
-  height: fit-content;
+Title.None = styled.div`
+  font-size: 23px;
+  opacity: 0.3;
   display: flex;
-  margin-left: auto;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  width: 100%;
+  height: 450px;
 `;
 
 export const IconWrapper = styled.div`
@@ -92,7 +90,6 @@ export const IconWrapper = styled.div`
   cursor: pointer;
   width: fit-content;
   height: fit-content;
-  /* border: 1px solid #d1d1cd; */
   display: flex;
   margin-left: auto;
   align-items: center;
@@ -104,11 +101,5 @@ export const Trash = styled(trash)`
   width: 22px;
   height: 22px;
   fill: #e11300;
-  border-width: 2px;
-`;
-export const Done = styled(done)`
-  width: 22px;
-  height: 22px;
-  fill: green;
   border-width: 2px;
 `;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import {
   Button,
   Container,
@@ -8,9 +7,7 @@ import {
   Title,
   Body,
   Trash,
-  Done,
   IconWrapper,
-  Right,
 } from "./style";
 
 export const Todo = () => {
@@ -18,13 +15,16 @@ export const Todo = () => {
   const [name, setName] = useState("");
   const [todo, setTodo] = useState(todoData ? JSON.parse(todoData) : []);
   const onAdd = () => {
-    setTodo((prev) => [...prev, { id: prev.length + 1, name: name }]);
-    setName("");
+    if (name.length > 1) {
+      return (
+        setTodo((prev) => [...prev, { id: prev.length + 1, name: name }]),
+        setName("")
+      );
+    } else alert("pleace fill on input");
   };
-  const onDelete = (value) => {
-    let data = todo.filter((i) => i.id !== value.id);
+  const onDelete = (id) => {
+    let data = todo.filter((i) => i.id !== id);
     setTodo(data);
-    console.log(data);
   };
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todo));
@@ -33,7 +33,7 @@ export const Todo = () => {
     <Container>
       <TopSection>
         <Input
-          // value={name}
+          value={name}
           placeholder="What needs to be done"
           onChange={(e) => setName(e.target.value)}
         />
@@ -41,21 +41,18 @@ export const Todo = () => {
       </TopSection>
       <Title>Todo List </Title>
       <Body>
-        {todo.map((value) => {
-          return (
-            <Title.Value key={value.id}>
-              {value.name}
-              <Right>
-                {/* <IconWrapper>
-                  <Done />
-                </IconWrapper> */}
-                <IconWrapper onClick={() => onDelete(value)}>
-                  <Trash />
-                </IconWrapper>
-              </Right>
+        {todo.length < 1 ? (
+          <Title.None> Add your todo</Title.None>
+        ) : (
+          todo.map(({ name, id }) => (
+            <Title.Value key={id}>
+              {name}
+              <IconWrapper onClick={() => onDelete(id)}>
+                <Trash />
+              </IconWrapper>
             </Title.Value>
-          );
-        })}
+          ))
+        )}
       </Body>
     </Container>
   );
